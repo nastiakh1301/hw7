@@ -6,15 +6,16 @@
     [out]  [1, 2, -1, 3, 4, -1, 6]
 """
 def main():
-    x = print("Input list: ")
+    x = input("Input list: ")
     sort_ascending(x)
 
 
 def sort_ascending(x):
+    print(x)
     temp = 0
     new_x = []
     for i in x:
-        if i == "-1":
+        if i == -1:
             place = x.index(i) + temp
             x.remove(i)
             temp += 1
@@ -23,13 +24,12 @@ def sort_ascending(x):
     for i in new_x:
         x.insert(i, -1)
     print(x)
+    return x
 
 if __name__ == "__main__":
     main()
-
     
-
-
+    
 t_1 = [-1, 150, 190, 170, -1, -1, 160, 180]
 assert sort_ascending(t_1) == [-1, 150, 160, 170, -1, -1, 180, 190]
 
